@@ -1,0 +1,732 @@
+@import "normalizez.scss"
+@import "resets.scss"
+
+html
+	box-sizing: border-box
+
+*,
+*::after,
+*::before
+	box-sizing: border-box
+
+a
+	text-decoration: none
+	color: inherit
+
+button
+	padding: 0
+	border: none
+	background-color: transparent
+
+ul
+	list-style: none
+
+.title
+	text-align: center
+	margin-bottom: 60px
+	font-family: "Cormorant", sans-serif
+	font-size: 40px
+	font-weight: 400
+
+.container
+	max-width: 1240px
+	margin: 0 auto
+	padding-left: 20px
+	padding-right: 20px
+
+body
+	position: relative
+	color: #151618
+	font-family: "Open Sans", sans-serif
+	font-size: 20px
+	font-weight: 300
+	line-height: normal
+
+.header
+	&__inner
+		display: flex
+		justify-content: space-between
+		align-items: center
+		min-height: 140px
+		padding: 30px 0
+
+.logo
+	margin-bottom: 35px
+
+.menu
+	&__btn
+		display: none
+		width: 40px
+		height: 20px
+		flex-direction: column
+		justify-content: space-between
+		position: relative
+		z-index: 2
+	&__btn span
+		background-color: #000
+		height: 2px
+		width: 100%
+	&__list
+		display: flex
+		align-items: center
+		gap: 0 65px
+		font-weight: 400px
+		font-size: 18px
+		margin-left: 85px
+		position: relative
+		z-index: 3
+
+.menu--close
+	display: none
+	position: absolute
+	left: 0
+	right: 0
+	top: 0
+	bottom: 0
+	background-color: rgba(0,0,0,.5)
+	z-index: 1
+	transition: background-color .3s
+
+.menu--open.menu--close
+	display: block
+
+.mobile-nav,
+.menu__close
+	display: none
+
+.user-actions
+	display: flex
+	align-items: center
+	gap: 0 20px
+	&__item-search
+		margin-left: 80px
+
+.top
+	background-image: url(../images/top-bg.jpg)
+	background-repeat: no-repeat
+	background-position: bottom left
+	background-size: cover
+	&__inner
+		min-height: 500px
+		font-weight: 400
+		color: #fff
+		font-family: "Cormorant", sans-serif
+		display: flex
+		flex-direction: column
+		justify-content: flex-end
+
+	&__title
+		font-size: 60px
+		margin-bottom: 20px
+		max-width: 790px
+		line-height: 1
+		font-weight: 400
+
+	&__text
+		font-size: 24px
+		margin-bottom: 48px
+		max-width: 560px
+
+.blockquote
+	&__text
+		text-align: center
+		font-family: "Cormorant", sans-serif
+		font-style: italic
+		font-size: 40px
+		max-width: 704px
+		margin: 150px auto
+
+.assortment
+	margin-bottom: 150px
+	&__title
+		text-align: center
+		font-family: "Cormorant", sans-serif
+		font-size: 40px
+		margin-bottom: 60px
+	&__list
+		text-align: center
+		display: flex
+		gap: 0 40px
+	&__img
+		max-width: 208px
+		max-height: 208px
+		width: 100%
+	&__name
+		padding-top: 10px
+		font-family: "Cormorant", sans-serif
+		font-size: 24px
+		font-weight: 400
+
+.reviews
+	background-color: #F7F2EA
+	padding: 60px 0
+	&__list
+		display: flex
+		justify-content: center
+		gap: 26px
+	&__item
+		flex-basis: 280px
+	&__text
+		font-size: 16px
+		font-style: italic
+		margin-bottom: 10px
+	&__name
+		font-size: 20px
+		font-weight: 600
+
+
+.main-blog
+	padding: 150px 0
+	&__list
+		display: flex
+		flex-wrap: wrap
+		gap: 40px 58px
+	&__item
+		flex-basis: 542px
+		display: flex
+		gap: 0 20px
+	&__item-content
+		display: flex
+		flex-direction: column
+	&__item-title
+		font-family: "Cormorant", sans-serif
+		font-size: 24px
+		font-weight: 400
+		margin-bottom: 10px
+		min-height: 86px
+	&__item-author
+		font-size: 13px
+	&__item-link
+		position: relative
+		font-size: 13px
+		margin-top: auto
+	&__item-link::after
+		content: ''
+		background-image: url(../images/arrow.png)
+		position: absolute
+		width: 5px
+		height: 10px
+		margin-left: 8px
+		bottom: 3px
+
+.main-blog
+	&__link
+		padding: 12px 41px
+		display: flex
+		justify-content: center
+		margin: 72px auto 0
+		border: 1px solid #151618
+		width: 152px
+.mailing-list
+	padding: 100px 0
+	background-color: #F7F2EA
+	background-image: url(../images/mailing.png)
+	background-repeat:  no-repeat
+	background-position: bottom right
+	&__title
+		text-align: left
+		margin-bottom: 50px
+	&__inner
+		display: flex
+		gap: 60px 40px
+	&__text
+		line-height: 1.5
+		flex-basis: 580px
+	&__form
+		display: flex
+		flex-wrap: wrap
+		flex-basis: 580px
+	&__email
+		border: none
+		border-bottom: 1px solid #B8B58B
+		background-color: transparent
+		padding: 3px 
+		width: 438px
+		margin-right: 25px
+		font-family: "Open Sans", sans-serif
+		font-size: 20px
+		font-weight: 300
+		font-style: normal
+		line-height: 1.5
+		color:#151618
+	&__email::placeholder
+		font-family: "Open Sans", sans-serif
+		font-size: 20px
+		font-style: normal
+		font-weight: 300
+		line-height: 1.5
+		color:#B8B58B	
+	&__btn
+		padding: 12px 41px
+		background-color: #FFFFFF
+		border: 1px solid #151618
+		font-size: 20px
+		font-family: "Open Sans", sans-serif
+		font-weight: 300
+		cursor: pointer
+	&__label
+		margin-top: 20px
+.checkbox
+	position: absolute
+	width: 1px
+	height: 1px
+	clip: rect(0,0,0,0)
+	overflow: hidden
+	padding-left: 20px
+	&__text
+		font-size: 13px
+		padding-left: 20px
+		padding-top: 10px
+.checkbox-style
+	position: absolute
+	width: 10px
+	height: 10px
+	border: 1px solid #151618
+	margin-top: 15px
+.prioritise
+	padding: 150px 0
+	&__list
+		text-align: center
+		display: flex
+		flex-wrap: wrap
+		justify-content: center
+		gap: 30px 49px
+	&__title
+		font-size: 30px
+		margin-bottom: 10px
+		font-weight: 300
+	&__text
+		font-weight: 600
+		margin-bottom: 30px
+.footer
+	padding: 100px 0 20px
+	background-color: #F7F2EA
+	&__bottom
+		display: flex
+	&__inner
+		margin-bottom: 100px
+		display: grid
+		grid-template-columns: repeat(4,1fr)
+		gap: 0 40px
+	&__copy
+		margin-right: 192px
+		font-size: 16px
+	&__products-title,
+	&__company-title
+		font-size: 24px
+		font-family: "Cormorant", sans-serif
+		margin-bottom: 50px
+	&__products-item,
+	&__company-item
+		margin-bottom: 20px
+	&__blockquote-text
+		margin-top: 80px
+		margin-bottom: 20px
+		font-size: 16px
+		font-weight: 300
+		font-style: italic
+	&__blockquote-author
+		width: 129px
+		font-size: 12px
+		font-style: normal
+	&__blockquote-author span
+		display: block
+	&__contacts-title
+		font-family: "Cormorant", sans-serif
+		font-size: 24px
+		font-weight: 400
+	&__contacts-text
+		font-size: 13px
+		margin-top: 50px
+		margin-bottom: 20px
+	&__nav
+		display: flex
+		flex-wrap: wrap
+	&__nav-logo
+		margin-right: 40px
+	&__nav-phone,
+	&__nav-email
+		font-size: 13px
+		position: relative
+		padding-left: 32px
+		display: block
+		margin-bottom: 20px
+	&__nav-contacts
+		margin-top: 20px
+	&__nav-phone::before,
+	&__nav-email::before
+		content: ''
+		position: absolute
+		left: 0
+		top: 2px
+		width: 22px
+		height: 16px
+		background-image: url(../images/email.svg)
+	&__nav-phone::before
+		background-image: url(../images/phone.svg)
+		width: 21px
+		height: 21px
+	&__social
+		margin-top: 40px
+		margin-left: 97px
+	&__social-list
+		display: flex
+		align-items: center
+		gap: 0 20px
+
+.partners-logo
+	display: flex
+	gap: 0 20px
+
+
+
+	
+
+
+
+
+
+	
+	
+	
+	
+@media ( max-width: 1000px)
+	.user-actions
+		&__item-search
+			margin-left: 30px
+	.menu
+		margin-right: auto
+		&__list
+			margin-left: 60px
+	.logo
+		margin-bottom: 0px
+	.header
+		&__inner
+			min-height: auto
+	.blockquote
+		&__text
+			margin-top: 120px
+			margin-bottom: 135px
+	.assortment
+		margin-bottom: 120px
+		&__list
+			gap: 0
+	.reviews
+		&__item:last-child
+			display: none
+	.main-blog
+		padding: 120px 0
+		&__item
+			flex-basis: 460px
+		&__item-img
+			max-width: 230px
+		&__list
+			gap: 67px 20px
+		&__link
+			margin-top: 60px
+
+	.mailing-list
+		padding: 60px 0
+		&__inner
+			flex-wrap: wrap
+			justify-content: center
+		&__text
+			text-align: center
+			flex-basis: 780px
+		&__title
+			text-align: center
+	.prioritise
+		padding: 120px 0
+		&__list
+			gap: 30px 210px
+	.footer
+		&__blockquote
+			width: 270px
+		&__blockquote-text
+			margin-top: 0
+		&__inner
+			margin-bottom: 55px
+		&__copy
+			margin-right: 85px
+		&__nav-logo
+			margin-right: 35px
+		&__contacts
+			width: 270px
+		
+
+
+
+	
+	
+@media ( max-width: 768px)
+	.menu
+		order: -1
+		margin-right: 0
+		&__list
+			transform: translateY(-100%)
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			width: 480px
+			margin: 0 auto
+			background-color: #fff
+			display: block
+			text-align: center
+			padding-top: 60px
+			transition: transform .6s ease
+		&__close-btn
+			position: absolute
+			top: 20px
+			right: 20px
+		&__item
+			margin-bottom: 30px
+			font-size: 24px
+			font-family: "Cormorant", sans-serif
+		&__btn
+			display: flex
+		&__list--open
+			transform: translateY(0%)
+	.mobile-nav,
+	.menu__close
+		display: block
+	.mobile-menu
+		padding-top: 60px
+		margin: 60px 30px
+		border-top: 2px solid #F7F2EA
+		&__item
+			margin-bottom: 35px
+			font-size: 13px
+	.mobile-actions
+		height: 60px
+		background-color: #F7F2EA
+		padding: 0px 80px
+		display: flex
+		justify-content: space-between
+		align-items: center
+	.logo
+		margin-right: 154px
+		margin-left: auto
+	.header
+		&__inner
+			padding-left: 64px
+			padding-right: 64px
+	.blockquote
+		&__text
+			max-width: 640px
+	.assortment
+		&__list
+			flex-wrap: wrap
+			justify-content: center
+	.reviews
+		&__item:last-child
+			display: block
+		&__list
+			flex-wrap: wrap
+			gap: 30px 76px
+	.main-blog
+		&__item
+			flex-basis: 542px
+		&__item:nth-child(even)
+			margin-left: 98px
+		&__item-img
+			max-width: 270px
+		&__list
+			gap: 30px 20px
+	.mailing-list
+		&__text
+			flex-basis: 640px
+	.prioritise
+		&__list
+			gap: 30px 133px
+	.footer
+		padding-top: 50px
+		padding-bottom: 10px
+		&__inner
+			grid-template-columns: repeat(3, 1fr)
+			grid-template-rows: 1fr 1fr
+		&__products,
+		&__company
+			grid-row: span 3
+		&__contacts
+			grid-column: 3/4
+			grid-row: 2/3
+		&__copy
+			margin-right: 120px
+
+
+
+
+
+@media ( max-width: 680px)
+	.container
+		padding-left: 10px
+		padding-right: 10px
+	.header
+		&__inner
+			padding-left: 0px
+			padding-right: 0px
+	.top
+		&__title
+			font-size: 40px
+			line-height: normal
+	.blockquote
+		&__text
+			max-width: 376px
+			font-size: 16px
+			margin-top: 60px
+			margin-bottom: 60px
+	.reviews
+		&__item
+			flex-basis: 220px
+		&__list
+			gap: 20px 30px
+
+
+
+@media ( max-width: 480px)
+	.logo
+		margin-right: 80px
+	.logo img
+		width: 40px
+	.menu
+		&__list
+			width: 360px
+	.assortment
+		margin-bottom: 60px
+		&__title
+			font-size: 24px
+			margin-bottom: 30px
+	.reviews
+		padding: 50px 0px
+		&__list
+			gap: 30px 20px
+		&__item
+			flex-basis: 220px
+	.main-blog
+		padding: 60px 0
+		&__item-img
+			max-width: 230px
+		&__item:nth-child(even)
+			margin-left: 0px
+	.mailing-list
+		padding: 50px 0
+		&__title
+			margin-bottom: 30px
+		&__text
+			font-size: 13px
+			flex-basis: 460px
+		&__email
+			width: 318px
+		&__inner
+			gap: 30px
+	.prioritise
+		padding: 50px 0
+	.footer
+		padding: 50px 0 10px
+		&__inner
+			display: flex
+			flex-wrap: wrap
+		&__blockquote
+			width: 100%
+		&__blockquote-text
+			margin-top: 50px
+		&__blockquote-author
+			margin-bottom: 10px
+		&__contacts
+			margin-top: 40px
+			width: 100%
+		&__contacts-title
+			margin-bottom: 20px
+			text-align: center
+		&__contacts-text
+			text-align: center
+			margin-top: 0px
+		&__nav
+			flex-wrap: nowrap
+		&__social
+			margin-left: 30px
+		&__copy
+			margin-right: auto
+		&__products
+			margin-right: auto
+			padding-right: 20px
+		&__company
+			padding-right: 20px
+			margin-right: 55px
+
+
+
+
+@media ( max-width: 360px)
+	title
+		margin-bottom: 30px
+		font-size: 24px
+	.logo
+		margin-right: 50px
+	.user-actions
+		&__item-search
+			margin-left: 0
+	.header
+		&__inner
+			padding: 10px 0px
+	.top
+		&__title
+			font-size: 24px
+			margin-bottom: 10px
+		&__text
+			font-size: 13px
+			margin-bottom: 30px
+		&__inner
+			min-height: 367px
+	.blockquote
+		&__text
+			max-width: 340px
+			margin-top: 70px
+			margin-bottom: 80px
+	.assortment
+		margin-bottom: 80px
+		&__img
+			max-width: 170px
+	.reviews
+		&__item
+			flex-basis: 100%
+		&__item:last-child,
+		&__item:first-child
+			display: none
+	.main-blog
+		padding: 50px 0
+		&__item
+			display: block
+			max-width: 270px
+		&__item:nth-child(even)
+			display: none
+		&__item-img
+			max-width: 100%
+		&__list
+			justify-content: center	
+		&__item-title
+			min-height: auto
+	.mailing-list
+		&__email
+			width: 195px
+	.prioritise
+		padding: 50px 0
+		&__title
+			font-size: 20px
+		&__text
+			font-size: 10px
+			font-weight: 400
+		&__list
+			gap: 40px 100px
+	.footer
+		&__nav
+			flex-wrap: wrap
+			justify-content: center
+		&__company
+			padding-right: 15px
+			margin-right: 0
+		&__products
+			padding-right: 10px
+			
+
